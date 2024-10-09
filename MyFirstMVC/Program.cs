@@ -12,6 +12,7 @@ namespace MyFirstMVC
         static void Main()
         {
             TipController myCalculate = new TipController();
+            myCalculate.Start();
         }
     }
 }
