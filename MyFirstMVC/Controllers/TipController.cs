@@ -10,16 +10,15 @@ namespace MyFirstMVC.Controllers
 {
     public class TipController
     {
-        Display myDisplay = new Display();
-        Tip myTip = new Tip();
-        public TipController()
-        {
-            myDisplay.Input();
-            myTip.Amount = myDisplay.Amount;
-            myTip.Percent = myDisplay.Percent;
-            myDisplay.TipSum = myTip.CalculateTip();
-            myDisplay.TotalSum = myTip.CalculateTotal();
-            myDisplay.Output();
-        }
+         Display myDisplay = new Display();
+         Tip myTip;
+     public void Start()
+    {
+     myDisplay.Input();
+     myTip = new Tip(myDisplay.Amount, myDisplay.Percent);
+     myDisplay.TipSum = myTip.CalculateTip();
+     myDisplay.TotalSum = myTip.CalculateTotal();
+     myDisplay.Output();
+    }
     }
 }
